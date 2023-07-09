@@ -46,6 +46,10 @@ sudo make install_watchid
 sudo make install_pam_watchid
 ```
 
+## Uninstalling
+
+To uninstall a plugin, remove the corresponding PAM configuration from `/etc/pam.d/sudo` and `/etc/pam.d/su` (e.g. via `sudo -e /etc/pam.d/su[do]`), and remove the `.so` plugin from `/usr/local/lib/pam`.
+
 ## See Also
 
 This repository contains these two PAM plugins for macOS:
