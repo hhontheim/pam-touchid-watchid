@@ -7,6 +7,12 @@ This directory contains two subdirectories: `touchid` and `watchid`, each with t
 > TL;DR: Build and install both plugins with the following commands:
 >
 > ```sh
+> ./install.sh all
+> ```
+>
+> ——— or ———
+>
+> ```sh
 > make all
 > sudo make install
 > sudo make install_pam
@@ -33,12 +39,24 @@ To build a single plugin, append the name of the plugin to the `make` commands a
 ### Touch ID
 
 ```sh
+./install.sh touchid
+```
+
+——— or ———
+
+```sh
 make touchid
 sudo make install_touchid
 sudo make install_pam_touchid
 ```
 
 ### Apple Watch
+
+```sh
+./install.sh watchid
+```
+
+——— or ———
 
 ```sh
 make watchid
@@ -49,6 +67,12 @@ sudo make install_pam_watchid
 ## Uninstalling
 
 To uninstall a plugin, remove the corresponding PAM configuration from `/etc/pam.d/sudo` and `/etc/pam.d/su` (e.g. via `sudo -e /etc/pam.d/su[do]`), and remove the `.so` plugin from `/usr/local/lib/pam`.
+
+This can be done automatically by running the following command:
+
+```sh
+./uninstall.sh [all|touchid|watchid]
+```
 
 ## See Also
 
